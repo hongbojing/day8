@@ -8,18 +8,55 @@
     <link rel="stylesheet" href="css/anotherstyle.css">
   </head>
   <body>
+    <h1>Raphael JS element methods review</h1>
+    <h3>Effects are on the left, codes are on the right side.</h3>
+    <p>Use a big screen for better viewing experience.</p>
+    <div class="center">
+      <h3>Use the following links to select what you want</h3>
+      <p>
+      <ol>
+        <li><a href="#code-left-14" class="btn btn-blue">14 animate()</a></li>
+        <li><a href="#code-left-15" class="btn btn-orange">15 attr()</a></li>
+        <li><a href="#code-left-16" class="btn btn-blue">16 click()</a></li>
+        <li><a href="#code-left-17" class="btn btn-orange">17 dblclick()</a></li>
+        <li><a href="#code-left-18" class="btn btn-blue">18 mousedown()</a></li>
+        <li><a href="#code-left-19" class="btn btn-orange">19 mouseup()</a></li>
+        <li><a href="#code-left-20" class="btn btn-blue">20 mousemove()</a></li>
+        <li><a href="#code-left-21" class="btn btn-orange">21 mouseover()</a></li>
+        <li><a href="#code-left-22" class="btn btn-blue">22 mouseover() & mouseout()</a></li>
+        <li><a href="#code-left-23" class="btn btn-orange">23 clone()</a></li>
+        <li><a href="#code-left-24" class="btn btn-blue">24 data()</a></li>
+        <li><a href="#code-left-25" class="btn btn-orange">25 removedata()</a></li>
+        <li><a href="#code-left-26" class="btn btn-blue">26 getBBox()</a></li>
+        <li><a href="#code-left-27" class="btn btn-orange">27 getPointAtLength(path,length)</a></li>
+        <li><a href="#code-left-28" class="btn btn-blue">28 toFront()</a></li>
+        <li><a href="#code-left-29" class="btn btn-orange">29 toBack()</a></li>
+        <li><a href="#code-left-30" class="btn btn-blue">30 hide() & show()</a></li>
+        <li><a href="#code-left-31" class="btn btn-orange">31 tranform()</a></li>
+        <li><a href="#code-left-32" class="btn btn-blue">32 remove()</a></li>
+      </ol>
+
+
+      </p>
+    </div>
+
     <div class="col-md-50 left center" id="code-left-14">
       <button class="btn btn-blue" onclick="animate_14_2()">Click to make the rect larger</button>
       <button class="btn btn-blue" onclick="reset_14_3()">Click to reset</button>
     </div>
     <div class="col-md-40 left center" id="code-right-14">
       <pre>
+      //14 animate() method is used to animate various properties
+      of the element for a specified duration
+
+      //syntax
       element.animate({
         Property1:value,
         Property2:value
       },time_in_milliseconds,easing(optional),
       callback_function(optional));
 
+      //example
       var paper14=Raphael("code-left-14",500,400);
 
       var rect_14_1=paper14.rect(50,50,150,80,10).attr({
@@ -49,10 +86,17 @@
     </div>
     <div class="col-md-40 left center" id="code-right-15">
       <pre>
-       element.attr({
+      //15 attr()  is used to add attributes such as styles and
+      other physical properties such as position, height, width,
+      and so on to the element. It takes values in key value pairs.
+
+      //syntax
+      element.attr({
        Property1:value,
        Property2:value
       })
+
+      //example
       var paper15=Raphael("code-left-15",400,400);
 
       var rect_15_1=paper15.rect(50,50,150,80,10).attr({
@@ -80,11 +124,15 @@
     </div>
     <div class="col-md-40 left center" id="code-right-16">
       <pre>
+      //16 click() is used to bind the click event to Raphael elements.
+
+      //syntax
       rect.click(function(){
        //something to do when the rectangle is clicked
        alert("clicked rectangle");
       })
 
+      //example
       var paper16=Raphael("code-left-16",400,400);
       var rect_16_1=paper16.rect(50,50,150,80,10).attr({
         "fill":"#17A9C6",
@@ -105,11 +153,15 @@
     </div>
     <div class="col-md-40 left center" id="code-right-17">
       <pre>
+      //17 dblclick() is used to bind the double click event to elements.
+
+      //syntax
       cir.dblclick(function(){
        //alerts "it's a double click " when double clicked
        alert("It's a double click !");
       })
 
+      //example
       var paper17=Raphael("code-left-17",400,400);
       var rect_17_1=paper17.rect(50,50,150,80,10).attr({
         "fill":"#17A9C6",
@@ -130,8 +182,9 @@
     </div>
     <div class="col-md-40 left center" id="code-right-18">
       <pre>
-      //mousedown(function(){})
+      //18 mousedown(function(){}) triggers when any mouse button is pressed down.
 
+      //example
       var paper18=Raphael("code-left-18",400,400);
 
       var text_18_1=paper18.text(20,20,"text to test mousedown ").attr({
@@ -155,8 +208,9 @@
     </div>
     <div class="col-md-40 left center" id="code-right-19">
       <pre>
-      //mouseup(function(){})
+      //19 mouseup(function(){}) triggers when any mouse button is released.
 
+      //example
       var paper19=Raphael("code-left-19",400,400);
 
       var text_19_1=paper19.text(20,20,"text to test mouse up").attr({
@@ -180,8 +234,9 @@
     <div class="col-md-40 left center" id="code-right-20">
       <pre>
 
-    //mousemove(function(){})
+    //20 mousemove(function(){}) triggers when the mouse is moved over the element.
 
+    //example
     var paper20=Raphael("code-left-20",400,400);
 
     var circle_20_1=paper20.circle(200,200,80).attr({
@@ -211,7 +266,9 @@
     <div class="col-md-40 left center" id="code-right-21">
       <pre>
 
-    //mouseover()
+    //21 mouseover() triggers when the mouse enters the Raphael element.
+
+    //example
     var paper21=Raphael("code-left-21",400,400);
     var rect_21_1=paper21.rect(50,50,150,80,10).attr({
       "fill":"#17A9C6",
@@ -236,7 +293,10 @@
     </div>
     <div class="col-md-40 left center" id="code-right-22">
       <pre>
-      //mouseover + mouseout
+      //22 mouseover + mouseout
+      // mouseout() triggers when the mouse leaves the Raphael element.
+
+      //example
       var paper22=Raphael("code-left-22",400,400);
       var rect_22_1=paper22.rect(50,50,100,80,10).attr({
         "fill":"#17A9C6",
@@ -263,7 +323,9 @@
     </div>
     <div class="col-md-40 left center" id="code-right-23">
       <pre>
-      //clone()
+      //23 clone() will produce a clone of the element, not a reference
+
+      //example
       var paper23=Raphael("code-left-23",400,400);
       var rect_23_1=paper23.rect(50,50,160,80,10).attr({
         "fill":"#ddd",
@@ -287,8 +349,13 @@
     </div>
     <div class="col-md-40 left center" id="code-right-24">
       <pre>
+      //24 data() assigns some data to each and every element and retrieve it on demand\
+
+      //syntax
       //ele.data('key','value')
       //or ele.data({'key1':'value1','key2':'value2'})
+
+      //example
       var paper24=Raphael("code-left-24",400,300);
       var cir_24_1=paper24.circle(100,100,80).attr({
         "fill":"#17A9C6",
@@ -315,7 +382,7 @@
     </div>
     <div class="col-md-40 left center" id="code-right-25">
       <pre>
-      removedata()
+      //25 removedata()
 
       The removedata() method takes the key as a parameter.
       If the key isn't provided, it will remove all the associated data.
@@ -339,8 +406,12 @@
     </div>
     <div class="col-md-40 left center" id="code-right-26">
       <pre>
-      //getBBox()
+      //26 getBBox() returns the bounding box of the element.
+      By default, the bounding will take into account any transformations on the element.
+      To get the bounding box before any transformation is applied on the element,
+      the isWithoutTransform parameter must be set to true.
 
+      //example
       var paper26=Raphael("code-left-26",400,200);
       var cir_26_1=paper26.circle(100,100,80).attr({
         "fill":"#17A9C6",
@@ -371,9 +442,11 @@
     </div>
     <div class="col-md-40 left center" id="code-right-27">
       <pre>
-      //getPointAtLength(path, length)
+      //27 getPointAtLength(path, length) returns the coordinates of the point at a
+      particular length of a path.
       //path: path string; length: number
 
+      //example
       var paper27=Raphael("code-left-27",400,200);
       var line_27_1=paper27.path("M10,10H200");
       var line_obj_27_2=line_27_1.getPointAtLength("M10,10H200",50);
@@ -393,7 +466,13 @@
     </div>
     <div class="col-md-40 left center" id="code-right-28">
       <pre>
-      //toFront()
+      //28 toFront() brings the element to the forefront on top of all other elements.
+      Its function is similar to CSS z-index. It doesn't take any parameters.
+
+      //syntax
+      cir.toFront(); //bring the circle on top of all the elements
+
+      //example
       var paper28=Raphael("code-left-28",400,300);
       var cir_28_1=paper28.circle(100,100,80).attr({
         "fill":"#17A9C6",
@@ -424,13 +503,15 @@
     </div>
     <div class="col-md-40 left center" id="code-right-29">
       <pre>
+      //29 toBack()
       The toBack() method is the exact opposite of the toFront() method,
       as it moves the element behind all the other elements.
       The following is an example of the toBack() method:
 
+      //syntax
       rect.toBack() // moves the rect behind all the elements
 
-      //toBack()
+      //example
       var paper29=Raphael("code-left-29",400,400);
 
       var cir_29_1=paper29.circle(100,100,80).attr({
@@ -460,8 +541,9 @@
     </div>
     <div class="col-md-40 left center" id="code-right-30">
       <pre>
-      //hide() & show()
+      //30 hide() & show()
 
+      //example
       var paper30=Raphael("code-left-30",400,400);
       var cir_30_1=paper30.circle(100,100,80).attr({
         "fill":"#17A9C6",
@@ -482,10 +564,15 @@
     <div class="col-md-50 left center" id="code-left-31"></div>
     <div class="col-md-40 left center" id="code-right-31">
       <pre>
-      //transform()
+      //31 transform() adds a transformation to a given element.
+      It takes only one parameter and it's the transformation string
+
+      //syntax
       //elem.transform('string')
       //elem.attr({"transform":"string"})
       //elem.attr("transform","string")
+
+      //example
       var paper31=Raphael("code-left-31",400,400);
       var rect_31_origin=paper31.rect(50,50,150,80,10).attr({
         "fill":"#17A9C6",
@@ -514,7 +601,7 @@
     </div>
     <div class="col-md-40 left center" id="code-right-32">
       <pre>
-      //remove()
+      //32 remove() removes the element from the paper.
       var paper32=Raphael("code-left-32",400,400);
       var rect_32_origin=paper32.rect(10,10,100,50,10).attr({
         "fill":"#17A9C6",
@@ -542,3 +629,4 @@
     <script src="js/lib/element.js"></script>
   </body>
 </html>
+
